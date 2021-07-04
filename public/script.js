@@ -7,7 +7,8 @@ myVideo.muted = true;
 const peers = {};
 navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: true
+    audio: true,
+    facingMode: 'user'
 }).then(stream => {
     myVideoStream = stream;
     addVideoStream(myVideo, stream);
