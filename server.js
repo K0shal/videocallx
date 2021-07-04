@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const server = require('http').Server(app);
+const PORT = process.env.PORT || 3000;
 const io = require('socket.io')(server);
 const { v4: uuidV4 } = require('uuid');
 
@@ -29,4 +30,4 @@ io.on('connection', socket => {
     });
 });
 
-server.listen(8080);
+server.listen(PORT);
